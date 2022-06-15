@@ -1,11 +1,13 @@
 # Team Profile Generator
 
 
-## Your Task
+## Your Challenge
 
-Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
+Your challenge is to build a Node.js command-line application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person. Because testing is key to making code maintainable, you’ll also write unit tests for each part of your code and ensure that it passes all of them.
 
-Because this application won’t be deployed, you’ll need to provide a link to a walk-through video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
+Because this application won’t be deployed, you’ll also need to provide a link to a walkthrough video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video and add it to the README of your project.
+
+Refer to the Fullstack Blog Video Submission GuideLinks to an external site. for additional guidance on creating a video.
 
 ## User Story
 
@@ -47,55 +49,59 @@ node index.js
 I started with a directory structure that looks like the following example:
 
 ```md
-__tests__/			// jest tests
-  Employee.test.js
-  Engineer.test.js
-  Intern.test.js
-  Manager.test.js
-dist/               // rendered output (HTML) and CSS style sheet
-lib/				// classes
-src/				// template code for  html
-index.js			// runs the application
-```
+.
+├── __tests__/             //jest tests
+│   ├── Employee.test.js
+│   ├── Engineer.test.js
+│   ├── Intern.test.js
+│   └── Manager.test.js
+├── dist/                  // rendered output (HTML) and CSS style sheet      
+├── lib/                   // classes
+├── src/                   // template helper code 
+├── .gitignore             // indicates which folders and files Git should ignore
+├── index.js               // runs the application
+└── package.json   
 
-This application includes `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) ALL pass.
+The application must have these classes: Employee, Manager, Engineer, and Intern. The tests for these classes (in the _tests_ directory) must all pass.
 
-The first class is an `Employee` parent class with the following properties and methods:
+The first class is an Employee parent class with the following properties and methods:
 
-* `name`
+name
 
-* `id`
+id
 
-* `email`
+email
 
-* `getName()`
+getName()
 
-* `getId()`
+getId()
 
-* `getEmail()`
+getEmail()
 
-* `getRole()`&mdash;returns `'Employee'`
+getRole() // Returns 'Employee'
 
-The other three classes will extend `Employee`.
+The other three classes will extend Employee.
 
-In addition to `Employee`'s properties and methods, `Manager` will also have the following:
+In addition to Employee's properties and methods, Manager will also have:
 
-* `officeNumber`
+officeNumber
 
-* `getRole()`&mdash;overridden to return `'Manager'`
+getRole() // Overridden to return 'Manager'
 
-In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
+In addition to Employee's properties and methods, Engineer will also have:
 
-* `github`&mdash;GitHub username
+github // GitHub username
 
-* `getGithub()`
+getGithub()
 
-* `getRole()`&mdash;overridden to return `'Engineer'`
+getRole() // Overridden to return 'Engineer'
 
-In addition to `Employee`'s properties and methods, `Intern` will also have the following:
+In addition to Employee's properties and methods, Intern will also have:
 
-* `school`
+school
 
-* `getSchool()`
+getSchool()
 
-* `getRole()`&mdash;overridden to return `'Intern'`
+getRole() // Overridden to return 'Intern'
+
+Finally, although it’s not a requirement, you should consider adding validation to ensure that user input provided is in the proper expected format.
