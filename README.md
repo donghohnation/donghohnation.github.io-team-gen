@@ -1,47 +1,110 @@
-# Team Profile Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Team Profile Generator
 
-  ## Description
-  A team profile generator from the command line.
-  
-  ![team](https://user-images.githubusercontent.com/3208213/173704005-d2a870d4-9f01-4cb2-8e55-2fa25dc4a643.PNG)
+[![Website generated via CLI](http://img.youtube.com/vi/soKo5LzN12w/0.jpg)](http://www.youtube.com/watch?v=soKo5LzN12w "Team Profile Generator")
 
+[Walk-through link](https://youtu.be/soKo5LzN12w)
 
-  ## License Badge
-  
-  ![License Badge](https://img.shields.io/badge/License-MIT License-green)
+## Your Task
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [License](#license)
-4. [Test](#test)
-5. [Contribution](#contribution)
-6. [Questions](#questions)
+Your task is to build a Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. Testing is key to making code maintainable, so you’ll also write a unit test for every part of your code and ensure that it passes each test.
 
-## Installation
-Clone from github, and install inquirer and jest.
+Because this application won’t be deployed, you’ll need to provide a link to a walk-through video that demonstrates its functionality and all of the tests passing. You’ll need to submit a link to the video AND add it to the readme of your project.
 
-## Usage
-Run the command node index.js to start the program.
+## User Story
 
-## License
-MIT License
+```md
+AS A manager
+I WANT to generate a webpage that displays my team's basic info
+SO THAT I have quick access to their emails and GitHub profiles
+```
 
+## Acceptance Criteria
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+```md
+GIVEN a command-line application that accepts user input
+WHEN I am prompted for my team members and their information
+THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+WHEN I click on an email address in the HTML
+THEN my default email program opens and populates the TO field of the email with the address
+WHEN I click on the GitHub username
+THEN that GitHub profile opens in a new tab
+WHEN I start the application
+THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+WHEN I enter the team manager’s name, employee ID, email address, and office number
+THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+WHEN I select the engineer option
+THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+WHEN I select the intern option
+THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
+WHEN I decide to finish building my team
+THEN I exit the application, and the HTML is generated
+```
 
-https://opensource.org/licenses/MIT
+## Screenshot
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the software without restriction, including without limiation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the software is furnished to do so, subject to the following conditions: /n The above copyright notice and this permission notice shall be included in all copies or substantial portions of the software. /n The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the sfotware or the use or other dealings in the software
+The following image shows screenshot of the generated HTML’s appearance and functionality:
 
+![HTML webpage titled “My Team” features key info.](./assets/images/screenshot1.png)
 
+## Getting Started
+My application will use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
 
-## Test
-n/a
+```bash
+node index.js
+```
 
-## Contribution
-n/a
+I started with a directory structure that looks like the following example:
 
-## Questions
-* If you have any questions, email me at: lam.kevin91@gmail.com,
-* GitHub Profile Link: https://github.com/Godoflaugh
+```md
+__tests__/			// jest tests
+  Employee.test.js
+  Engineer.test.js
+  Intern.test.js
+  Manager.test.js
+dist/               // rendered output (HTML) and CSS style sheet
+lib/				// classes
+src/				// template code for  html
+index.js			// runs the application
+```
+
+This application includes `Employee`, `Manager`, `Engineer`, and `Intern` classes. The tests for these classes (in the `_tests_` directory) ALL pass.
+
+The first class is an `Employee` parent class with the following properties and methods:
+
+* `name`
+
+* `id`
+
+* `email`
+
+* `getName()`
+
+* `getId()`
+
+* `getEmail()`
+
+* `getRole()`&mdash;returns `'Employee'`
+
+The other three classes will extend `Employee`.
+
+In addition to `Employee`'s properties and methods, `Manager` will also have the following:
+
+* `officeNumber`
+
+* `getRole()`&mdash;overridden to return `'Manager'`
+
+In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
+
+* `github`&mdash;GitHub username
+
+* `getGithub()`
+
+* `getRole()`&mdash;overridden to return `'Engineer'`
+
+In addition to `Employee`'s properties and methods, `Intern` will also have the following:
+
+* `school`
+
+* `getSchool()`
+
+* `getRole()`&mdash;overridden to return `'Intern'`
