@@ -1,8 +1,5 @@
 # Team Profile Generator
 
-[![Website generated via CLI](http://img.youtube.com/vi/soKo5LzN12w/0.jpg)](http://www.youtube.com/watch?v=soKo5LzN12w "Team Profile Generator")
-
-[Walk-through link](https://youtu.be/soKo5LzN12w)
 
 ## Your Task
 
@@ -39,12 +36,6 @@ THEN I am prompted to enter the intern’s name, ID, email, and school, and I am
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 ```
-
-## Screenshot
-
-The following image shows screenshot of the generated HTML’s appearance and functionality:
-
-![HTML webpage titled “My Team” features key info.](./assets/images/screenshot1.png)
 
 ## Getting Started
 My application will use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:

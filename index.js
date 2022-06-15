@@ -17,22 +17,22 @@ const questions = async () => {
     .prompt([
       {
         type: "input",
-        message: "What is your name?",
+        message: "Whats your name",
         name: "name",
       },
       {
         type: "input",
-        message: "What is your ID number?",
+        message: "Whats your ID",
         name: "id",
       },
       {
         type: "input",
-        message: "What is your email?",
+        message: "Whats your email",
         name: "email",
       },
       {
         type: "list",
-        message: "What is your role?",
+        message: "Whats your role",
         name: "role",
         choices: ["Engineer", "Intern", "Manager"],
       },
@@ -47,7 +47,7 @@ const questions = async () => {
           .prompt([
             {
               type: "input",
-              message: "What is your office number",
+              message: "Whats your office number",
               name: "officeNumber",
             },
           ])
@@ -65,7 +65,7 @@ const questions = async () => {
           .prompt([
             {
               type: "input",
-              message: "What is your GitHub user name?",
+              message: "Whats your github",
               name: "github",
             }
           ])
@@ -109,7 +109,7 @@ async function promptQuestions() {
         name:'addMember',
         type: 'list',
         choices: ['Add a new member', 'Create team'],
-        message: "What would you like to do next?"
+        message: "What ya wanna do next"
       }
     ])
 
